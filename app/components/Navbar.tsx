@@ -30,7 +30,7 @@ const Navbar = async () => {
                                 </button>
                             </form>
 
-                            <Link href={`/user/${session?.user?.email}`}>
+                            <Link href={`/user/${(session?.user?.email)?.split("@")[0]}`}>
                                 <span>{session?.user?.name}</span>
                             </Link>
                         </>
