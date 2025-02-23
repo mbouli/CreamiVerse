@@ -20,6 +20,10 @@ const Navbar = async () => {
                                 </span>
                             </Link>
 
+                            <Link href={`/user/${(session?.user?.email)?.split("@")[0]}`}>
+                                <span>{session?.user?.name}</span>
+                            </Link>
+
                             <form action={async () => {
                                 'use server';
 
@@ -29,10 +33,6 @@ const Navbar = async () => {
                                     <span>Logout</span>
                                 </button>
                             </form>
-
-                            <Link href={`/user/${(session?.user?.email)?.split("@")[0]}`}>
-                                <span>{session?.user?.name}</span>
-                            </Link>
                         </>
                     ) : (
                         <>
