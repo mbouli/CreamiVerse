@@ -2,10 +2,11 @@
 A website created for Ninja Creami lovers to post their own recipes and discover new ones! 
 
 ### 🚀 Features
-1. Uploading custom recipes with images
-2. Real-time searching
-3. Filtering searches (For high protein, low calorie, specific flavors, etc.)
-4. User profiles that show off their own
+1. Oauth2 with Google ✅
+2. Uploading custom recipes with images ❌
+3. Real-time searching ❌
+4. Filtering searches (For high protein, low calorie, specific flavors, etc.) ❌
+5. User profiles that show off their own ❌
 
 ### ⚙️ Built with
 - **Frontend**: React, Next, Tailwind
