@@ -3,6 +3,9 @@ import { EyeIcon } from 'lucide-react'
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from './ui/button';
+import { Author, Recipe } from '@/sanity/types';
+
+export type RecipeCardType = Omit<Recipe, 'author'> & { author?: Author }
 
 const RecipeCard = ({ post }: { post: RecipeCardType }) => {
 
@@ -42,7 +45,7 @@ const RecipeCard = ({ post }: { post: RecipeCardType }) => {
             </Link>
 
             <div className="flex-between gap-3 mt-5">
-                <Link href={`/?query=${category.toLowerCase()}`}>
+                <Link href={`/?query=${category?.toLowerCase()}`}>
                     <p className="text-16-medium">{category}</p>
                 </Link>
                 <Button className='recipe-card_btn' asChild>

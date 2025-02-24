@@ -1,15 +1,18 @@
 import SearchForm from '@/components/SearchForm';
-import RecipeCard from '@/components/RecipeCard';
-import { client } from '@/sanity/lib/client';
+import RecipeCard, { RecipeCardType } from '@/components/RecipeCard';
 import { RECIPES_QUERY } from '@/sanity/lib/queries';
+import { sanityFetch, SanityLive } from '@/sanity/lib/live';
 
 export default async function Home({ searchParams }: {
   searchParams: Promise<{ query?: string }>
 }) {
 
   const query = (await searchParams).query;
-  const posts = await client.fetch(RECIPES_QUERY);
-
+  const params = { search: query || null };
+  const { data: posts } = await sanityFetch({
+    query: RECIPES_QUERY,
+    params
+  })
   return (
     <>
       <section className="main_container">
@@ -25,14 +28,16 @@ export default async function Home({ searchParams }: {
 
         <ul className='mt-7 card_grid'>
           {posts?.length > 0 ? (
-            posts.map((post: RecipeCardType) => (
-              <RecipeCard key={post?._id} post={post} />
+            posts.map((post) => (
+              <RecipeCard key={post?._id} post={post as RecipeCardType} />
             ))
           ) : (
             <p className="no-results">No recipes found</p>
           )}
         </ul>
       </section>
+
+      <SanityLive />
     </>
   );
 }
