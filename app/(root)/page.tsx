@@ -28,7 +28,7 @@ export default async function Home({ searchParams }: {
 
         <ul className='mt-7 card_grid'>
           {posts?.length > 0 ? (
-            posts.map((post) => (
+            posts.map((post: RecipeCardType) => (
               <RecipeCard key={post?._id} post={post as RecipeCardType} />
             ))
           ) : (
