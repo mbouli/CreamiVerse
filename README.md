@@ -4,8 +4,8 @@ A website created for Ninja Creami lovers to post their own recipes and discover
 ### 🚀 Features
 1. Oauth2 with Google ✅
 2. Uploading custom recipes with images ❌
-3. Real-time searching ❌
-4. Filtering searches (For high protein, low calorie, specific flavors, etc.) ❌
+3. Searching ✅
+4. Filtering searches (For high protein, low calorie, specific flavors, etc.) ✅
 5. User profiles that show off their own ❌
 
 ### ⚙️ Built with
