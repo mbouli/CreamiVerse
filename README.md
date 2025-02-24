@@ -1,4 +1,4 @@
-# 🍦 CreamiVerse <code style="color : blue">coming soon</code>
+# 🍦 CreamiVerse ```Coming soon!```
 A website created for Ninja Creami lovers to post their own recipes and discover new ones! 
 
 ### 🚀 Features
@@ -15,11 +15,21 @@ A website created for Ninja Creami lovers to post their own recipes and discover
 
 ---
 ### Installation
+1. Clone the repository and download dependencies
 ```bash
 # Clone the repository
 git clone https://github.com/razod/CreamiVerse
 # Install the dependencies
 npm install
+```
+3. Set up environment variables
+```env
+AUTH_SECRET=
+AUTH_GOOGLE_ID=
+AUTH_GOOGLE_SECRET=
+```
+3. Run it!
+```bash
 # Create production build
 npm run build
 # Start it!
