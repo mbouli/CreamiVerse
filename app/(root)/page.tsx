@@ -1,21 +1,14 @@
 import SearchForm from '@/components/SearchForm';
 import RecipeCard from '@/components/RecipeCard';
+import { client } from '@/sanity/lib/client';
+import { RECIPES_QUERY } from '@/sanity/lib/queries';
 
 export default async function Home({ searchParams }: {
   searchParams: Promise<{ query?: string }>
 }) {
 
   const query = (await searchParams).query;
-  const posts = [{
-    _createdAt: new Date(),
-    views: 2501,
-    author: { _id: 1, name: 'Best Creamier' },
-    _id: 1,
-    description: 'Best recipe ever',
-    image: 'https://icecreamfromscratch.com/wp-content/uploads/2022/03/Cookie-Monster-Ice-Cream-1.2-720x720.jpg',
-    category: 'protein',
-    title: 'Cookie Monster Creami'
-  }]
+  const posts = await client.fetch(RECIPES_QUERY);
 
   return (
     <>
