@@ -38,7 +38,7 @@ const RecipeCard = ({ post }: { post: RecipeCardType }) => {
                     {description}
                 </p>
 
-                <img src={image} alt="placeholder" className='recipe-card_img' />
+                <Image src={image as string} alt="placeholder" className='recipe-card_img' />
             </Link>
 
             <div className="flex-between gap-3 mt-5">
