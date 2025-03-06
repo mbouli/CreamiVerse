@@ -21,7 +21,7 @@ export const RECIPE_BY_ID_QUERY = defineQuery(`
     slug,
     _createdAt,
     author -> {
-      _id, name, image, bio
+      _id, name, email, image, bio
     },
     views,
     description,
@@ -29,3 +29,9 @@ export const RECIPE_BY_ID_QUERY = defineQuery(`
     image,
     pitch
 }`);
+
+export const RECIPE_VIEWS_QUERY = defineQuery(`
+  *[_type == "recipe" && _id == $id][0]{
+    _id,
+    views
+  }`);
