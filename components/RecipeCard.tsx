@@ -32,9 +32,6 @@ const RecipeCard = ({ post }: { post: RecipeCardType }) => {
                         <h3 className="text-26-semibold line-clamp-1">{title}</h3>
                     </Link>
                 </div>
-                <Link href={`/user/${author?._id}`}>
-                    <Image src="https://placehold.co/48x48" alt="Placeholder" width={48} height={48} className='rounded-full' />
-                </Link>
             </div>
             <Link href={`/recipe/${_id}`}>
                 <p className="recipe-card_desc">

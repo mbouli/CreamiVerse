@@ -2,6 +2,7 @@ import SearchForm from '@/components/SearchForm';
 import RecipeCard, { RecipeCardType } from '@/components/RecipeCard';
 import { RECIPES_QUERY } from '@/sanity/lib/queries';
 import { sanityFetch, SanityLive } from '@/sanity/lib/live';
+import Footer from '@/components/Footer';
 
 export default async function Home({ searchParams }: {
   searchParams: Promise<{ query?: string }>
@@ -38,6 +39,7 @@ export default async function Home({ searchParams }: {
       </section>
 
       <SanityLive />
+      <Footer />
     </>
   );
 }
