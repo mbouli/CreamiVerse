@@ -1,7 +1,6 @@
 import { formatDate } from '@/lib/utils'
 import { EyeIcon } from 'lucide-react'
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from './ui/button';
 import { Author, Recipe } from '@/sanity/types';
 
@@ -38,7 +37,7 @@ const RecipeCard = ({ post }: { post: RecipeCardType }) => {
                     {description}
                 </p>
 
-                <Image src={image as string} alt="placeholder" className='recipe-card_img' />
+                <img src={image as string} alt="placeholder" className='recipe-card_img' />
             </Link>
 
             <div className="flex-between gap-3 mt-5">
